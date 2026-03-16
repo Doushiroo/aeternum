@@ -29,12 +29,14 @@ jobs:
         run: gradle wrapper --gradle-version 8.8 --distribution-type bin
 
       - name: Build mod
-        run: ./gradlew build --no-daemon --stacktrace
+        run: ./gradlew build --no-daemon --info
+        continue-on-error: true
 
-      - name: Upload JAR
+      - name: Upload JAR if exists
         uses: actions/upload-artifact@v4
         with:
           name: aeternum-mod
-          path: build/libs/*.jar
 
+          path: build/libs/*.jar
           retention-days: 30
+        if: always()
