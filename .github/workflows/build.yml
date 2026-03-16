@@ -19,16 +19,17 @@ jobs:
           java-version: '21'
           distribution: 'temurin'
 
+
       - name: Cache Gradle
         uses: actions/cache@v4
         with:
           path: |
             ~/.gradle/caches
             ~/.gradle/wrapper
-          key: gradle-${{ hashFiles('*/.gradle*') }}
+          key: gradle-${{ hashFiles('**/*.gradle*') }}
 
-      - name: Grant execute permission
-        run: chmod +x gradlew
+      - name: Install Gradle wrapper
+        run: gradle wrapper --gradle-version 8.8
 
       - name: Build mod
         run: ./gradlew build --no-daemon
@@ -36,6 +37,7 @@ jobs:
       - name: Upload JAR
         uses: actions/upload-artifact@v4
         with:
+
           name: aeternum-mod
           path: build/libs/*.jar
           retention-days: 30
