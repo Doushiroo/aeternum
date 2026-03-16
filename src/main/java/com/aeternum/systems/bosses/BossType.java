@@ -1,0 +1,6 @@
+package com.aeternum.systems.bosses;
+
+public enum BossType {
+    UNDEAD, NATURE, AQUATIC, GIANT, BEAST, DRAGON, DEMON, FALLEN_ANGEL,
+    ARCHANGEL, ELEMENTAL, ELDER_BEAST, PRIMORDIAL, VOID, CONSTRUCT
+}

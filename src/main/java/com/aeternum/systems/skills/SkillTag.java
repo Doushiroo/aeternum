@@ -1,0 +1,6 @@
+package com.aeternum.systems.skills;
+
+public enum SkillTag {
+    MELEE, RANGED, MAGIC, HOLY, DARK, FIRE, ICE, LIGHTNING, NATURE, SUMMON,
+    AOE, BUFF, DEBUFF, HEAL, CONTROL, STUN, MOVEMENT, STEALTH, UTILITY, PASSIVE
+}
